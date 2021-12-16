@@ -75,14 +75,14 @@ int main(int argc, char **argv) {
         end = MPI_Wtime();
 		printf("%d\t%lf\n", size, end-start);
 
-        FILE *ff = fopen("result.txt","w");
-        for(i=0; i < ISIZE; i++){
-            for (j=0; j < JSIZE; j++){
-                fprintf(ff,"%f ",a[i][j]);
-            }
-            fprintf(ff,"\n");
-        }
-        fclose(ff);
+        // FILE *ff = fopen("result.txt","w");
+        // for(i=0; i < ISIZE; i++){
+        //     for (j=0; j < JSIZE; j++){
+        //         fprintf(ff,"%f ",a[i][j]);
+        //     }
+        //     fprintf(ff,"\n");
+        // }
+        // fclose(ff);
 
         for (i = 0; i < ISIZE; i++) free(a[i]);
 		free(a);

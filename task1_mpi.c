@@ -3,8 +3,8 @@
 #include <math.h>
 #include <mpi.h>
 
-#define ISIZE 5000
-#define JSIZE 5000
+#define ISIZE 1000
+#define JSIZE 1000
 
 int main(int argc, char **argv)
 {

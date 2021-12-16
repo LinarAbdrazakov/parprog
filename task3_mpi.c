@@ -65,24 +65,19 @@ int main(int argc, char **argv) {
     }
     MPI_Gather(sub_array, per_proc, MPI_DOUBLE, array, per_proc, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-    // for (i=0; i<ISIZE-3; i++){
-    //     for (j = 4; j < JSIZE; j++){
-    //         a[i][j] = sin(0.00001*a[i+3][j-4]);
-    //     }
-    // }
 
     if(rank==0) {
         end = MPI_Wtime();
 		printf("%d\t%lf\n", size, end-start);
 
-        FILE *ff = fopen("result.txt","w");
-        for(i=0; i < ISIZE; i++){
-            for (j=0; j < JSIZE; j++){
-                fprintf(ff,"%f ",a[i][j]);
-            }
-            fprintf(ff,"\n");
-        }
-        fclose(ff);
+        // FILE *ff = fopen("result.txt","w");
+        // for(i=0; i < ISIZE; i++){
+        //     for (j=0; j < JSIZE; j++){
+        //         fprintf(ff,"%f ",a[i][j]);
+        //     }
+        //     fprintf(ff,"\n");
+        // }
+        // fclose(ff);
 
         for (i = 0; i < ISIZE; i++) free(a[i]);
 		free(a);
